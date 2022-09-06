@@ -1,9 +1,17 @@
-<script lang="ts" setup>
+<script  setup>
 import restaurants from "@/data.json"
-// composables always start with word "use" and store global state
   const route = useRoute()
   const name = route.params.name
   const restaurant = restaurants.find(r => r.name === name)
+useMeta({
+  title: restaurants.values ? name : "404 - restaurant not found",
+  meta: [
+    {
+      name: "viewport",
+      content: "width=device-width"
+    }
+  ]
+})
 </script>
 
 <template>
