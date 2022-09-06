@@ -8,6 +8,7 @@ import restaurants from "@/data.json"
 
 <template>
   <div>
+    <NuxtLayout name="custom" v-if="restaurant">
     <div class="restaurant-container">
       <div class="image-container">
         <img :src="restaurant.imageUrl" alt="" />
@@ -25,7 +26,21 @@ import restaurants from "@/data.json"
         <p class="content">{{ restaurant.content }}</p>
       </div>
     </div>
-    <RestaurantAd />
+    </NuxtLayout>
+
+    <div v-else>
+      <div class="error-container">
+        <NuxtLayout name="error">
+          <template #header>
+            <h1>Restaurant not found</h1>
+          </template>
+          <template #redirectEl>
+            <NuxtLink to="/restaurants">Go Back</NuxtLink>
+          </template>
+        </NuxtLayout>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -76,4 +91,9 @@ import restaurants from "@/data.json"
   font-size: 1.5rem;
   margin-top: 4rem;
 }
+.error-container {
+  text-align: center;
+  margin-top: 5rem;
+}
+
 </style>

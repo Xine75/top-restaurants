@@ -1,8 +1,10 @@
 <template>
   <div>
+  <NuxtLayout name="custom">
     <div class="container">
       <RestaurantTable />
     </div>
-    <RestaurantAd />
+  </NuxtLayout>
+
   </div>
 </template>
