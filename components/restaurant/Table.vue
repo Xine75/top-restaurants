@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import restaurants from "@/data.json";
+import restaurants from "../../data.json";
 const restaurantsOrganized = {
   first: [...restaurants].splice(0, 25),
   second: [...restaurants].splice(25, 25),
