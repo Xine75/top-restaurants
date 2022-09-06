@@ -25,6 +25,7 @@ import restaurants from "@/data.json"
         <p class="content">{{ restaurant.content }}</p>
       </div>
     </div>
+    <RestaurantAd />
   </div>
 </template>
 
@@ -53,7 +54,7 @@ import restaurants from "@/data.json"
 }
 .info-container h1 {
   text-transform: uppercase;
-  font-size: 6rem;
+  font-size: 4rem;
   margin-bottom: 3rem;
 }
 .stats-container {
